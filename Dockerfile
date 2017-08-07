@@ -1,16 +1,4 @@
-FROM openjdk:7-jdk
-
-# Node.js
-
-RUN curl -sL https://deb.nodesource.com/setup_7.x | bash - \
-	&& apt-get install -y nodejs \
-	&& rm -rf /var/lib/apt/lists/* /var/cache/apt/*
-
-# Xvfb
-
-RUN apt-get update -qqy \
-	&& apt-get -qqy install xvfb \
-	&& rm -rf /var/lib/apt/lists/* /var/cache/apt/*
+FROM node:6
 
 # Google Chrome
 
@@ -19,5 +7,4 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
 	&& apt-get update -qqy \
 	&& apt-get -qqy install google-chrome-stable \
 	&& rm /etc/apt/sources.list.d/google-chrome.list \
-	&& rm -rf /var/lib/apt/lists/* /var/cache/apt/* \
-	&& sed -i 's/"$HERE\/chrome"/xvfb-run "$HERE\/chrome" --no-sandbox/g' /opt/google/chrome/google-chrome
+	&& rm -rf /var/lib/apt/lists/* /var/cache/apt/* 
