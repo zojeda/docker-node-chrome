@@ -1,12 +1,10 @@
-# markhobson/node-chrome
+# zojeda/node-chrome
 
 Docker image for Node.js automated UI tests.
 
 Includes:
 
-* JDK 8
-* Node.js 7.x
+* Node.js 6.x
 * Chrome (latest)
-* Xvfb
 
-Available on [Docker Hub](https://hub.docker.com/r/markhobson/node-chrome/).
+Available on [Docker Hub](https://hub.docker.com/r/zojeda/node-chrome/).
